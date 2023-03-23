@@ -9,6 +9,18 @@ def encode(password):                         # encodes inputted password
         encoded_password += str(new_digit)    # adds new digits to encoded password string
     return encoded_password
 
+def decode(encoded_password):
+    decoded_password_list = []
+    for number in encoded_password:
+        number = int(number)
+        if number <= 3:
+            decoded_password_list.append((number + 10 - 3) % 10)
+        else:
+            decoded_password_list.append(number - 3)
+    decoded_password = "".join(str(num) for num in decoded_password_list)
+    return decoded_password
+
+# takes an encoded password and decodes it
 
 def main():
     option = 0
