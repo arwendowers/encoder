@@ -38,6 +38,7 @@ def main():
                 print()
                 break
             if option == 2:  # Decode
+                password = decode(encoded_password) if password != 'none' else 'none'
                 print(f'The encoded password is {encoded_password}, and the original password is {password}.')
                 print()
                 break
